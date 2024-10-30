@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            margin: auto;
+            padding-top: 50px;
+            width: 80%;
+            min-width: 500px;
+            max-width: 750px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 710px;
+            height: auto;
+            display: inline-block;
+        }
+
+        .box div {
+            min-width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            margin: 10px;
+            display: inline-block;
+            background-color: {{color}};
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <div class="box">
+            {% for i in range(1,x+1): %}
+            <div></div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

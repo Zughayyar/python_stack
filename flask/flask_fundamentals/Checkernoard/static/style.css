@@ -1,0 +1,47 @@
+/*
+CSS file : Checkerboard
+Anas Zughayyar
+*/
+
+
+/* CSS Resit */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.board {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.row {
+    display: flex;
+}
+
+.square1 {
+    width: 50px;
+    height: 50px;
+    background-color: #556b2f;
+}
+
+.square2 {
+    width: 50px;
+    height: 50px;
+    background-color: burlywood;
+}
