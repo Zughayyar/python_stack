@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Index</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my_css/my_style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <form action="/result" method="post">
+            <div class="mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" placeholder="your name" name="name">
+            </div>
+            <div class="mb-3">
+                <labelb class="form-label">Dojo Locations</label>
+                <select class="form-select" name="location">
+                    <option value="San Jose">San Jose</option>
+                    <option value="New York">New York</option>
+                    <option value="Jerusalem">Jerusalem</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <labelb class="form-label">Favourate Language</label>
+                <select class="form-select" name="language">
+                    <option value="English">English</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+            </div>
+                <div class="mb-3">
+                    <labelb class="form-label">Comments (Optional)</label>
+                    <textarea class="form-control" rows="3" name="comment"></textarea>
+                </div>
+
+            <div class="button-section">
+                <button type="submit" class="btn btn-primary">Button</button>
+            </div>
+        </form>
+    </div>
+
+
+      <script src="{{ url_for('static' , filename='js/bootstrap.js') }}" ></script>
+</body>
+</html>

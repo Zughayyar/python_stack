@@ -1,0 +1,68 @@
+
+Django Enviroment:
+source /Users/anaszughayyar/Desktop/My\ AXSOS\ ACADEMY/Python\ Stack/my_enviroments/djangoPy3Env/bin/activate
+
+
+/// create new django project
+1- django-admin startproject first_assignment
+
+/// Run server:
+1- python manage.py runserver
+
+/// start new App:
+1- python manage.py startapp my_app
+2- go to project: settings.py
+3- Add app in installed apps
+4- go to urls.py add path remove admin
+5- add ...     path('', include('my_app.urls'))
+
+
+/// create in app urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index),
+]
+
+/// Load static
+{% load static %}
+
+/// link Style
+<link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.css' %}">
+
+/// in HTML Forms
+ {% csrf_token %}
+
+
+/// migrate 
+python manage.py makemigrations
+python manage.py migrate 
+
+
+/// DATABASE in models.py
+from django.db import models
+
+# Create your models here.
+class User(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    desc = models.TextField()
+    age = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+/// Import models
+from . import models
+
+
+/// Rename Django project
+To rename the project, you need to change the project name wherever it appears. 
+grep -nir oldname . can help you find where it appears. 
+In my case, I had to change the following places:
+Rename the oldprojectname directory to newprojectname
+manage.py: Change os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oldprojectname.settings')
+newprojectname/wsgi.py: Change os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oldprojectname.settings')
+newprojectname/settings.py: Change ROOT_URLCONF = 'oldprojectname.urls' and change WSGI_APPLICATION = 'oldprojectname.wsgi.application'
+newprojectname/urls.py: Change oldprojectname in a line I had added

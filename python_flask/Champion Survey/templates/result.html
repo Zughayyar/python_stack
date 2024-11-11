@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/my_css/my_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="result-title">Submitted Info:</h1>
+        <table class="table">
+            <tbody>
+              <tr>
+                <td>Name:</td>
+                <td>{{name}}</td>
+              </tr>
+              <tr>
+                <td>Dojo Locations:</td>
+                <td>{{location}}</td>
+              </tr>
+              <tr>
+                <td>Favourate Languages:</td>
+                <td>{{language}}</td>
+              </tr>
+              <tr>
+                <td>Comments:</td>
+                <td>{{comment}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+
+
+
+    <script src="{{ url_for('static' , filename='js/bootstrap.js') }}" ></script>
+</body>
+</html>
